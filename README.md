@@ -2,10 +2,7 @@
 <img width="1536" height="1024" alt="ChatGPT Image Sep 22, 2026, 06_00_51 PM" src="https://github.com/user-attachments/assets/c26978ff-109e-4baa-bf4e-079ca7e69244" />
 
 
-
 ```text
-
-
 
 
  __   __ _____ _____ ___  _   _ _____ ____  
