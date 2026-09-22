@@ -1,6 +1,8 @@
 # YouTube Shorts Security-Awareness Demo
-<img ![Uploading ChatGPT Image Sep 22, 2026, 06_00_51 PM.png…]() >
-
+<p align="center">
+  <img src="!ChatGPT Image Sep 22, 2026, 06_00_51 PM.png
+" alt="Social Engineering Concept" width="900">
+</p>
 ```text
  __   __ _____ _____ ___  _   _ _____ ____  
  \ \ / /| ____|_   _/ _ \| \ | | ____|  _ \ 
