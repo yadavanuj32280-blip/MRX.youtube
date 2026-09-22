@@ -1,4 +1,5 @@
 # YouTube Shorts Security-Awareness Demo
+<img ![Uploading ChatGPT Image Sep 22, 2026, 06_00_51 PM.png…]() >
 
 ```text
  __   __ _____ _____ ___  _   _ _____ ____  
