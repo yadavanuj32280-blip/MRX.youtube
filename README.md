@@ -1,65 +1,118 @@
 # MRX.youtube
-# YouTube Shorts Web Page
+## 🎬 YouTube Shorts Web Viewer
 
-A simple HTML/CSS/JavaScript webpage that embeds a YouTube Shorts video in a responsive layout.
+> A simple responsive HTML page that embeds a YouTube Shorts video in a mobile-style layout.
 
-## Features
+```text
+╔══════════════════════════════════════════╗
+║            📺 YOUTUBE SHORTS            ║
+║                                          ║
+║              ┌──────────┐                ║
+║              │   ▶️     │                ║
+║              │  VIDEO   │                ║
+║              │  SHORT   │                ║
+║              └──────────┘                ║
+║                                          ║
+║        Responsive • Simple • HTML        ║
+╚══════════════════════════════════════════╝
+```
 
-- Responsive YouTube Shorts embed
-- Mobile-friendly vertical video layout
-- Open Graph metadata for social-media sharing
-- Twitter player metadata
-- Full-screen video support
-- Browser camera access functionality
-- Captures an image from the camera every 5 seconds after permission is granted
-- Sends captured images to a configured webhook endpoint
+## ✨ Features
 
-## Technologies Used
+- 📱 Responsive YouTube Shorts layout
+- ▶️ Embedded YouTube video player
+- 🌑 Black fullscreen-style background
+- 🖼️ Open Graph preview metadata for social sharing
+- 🐦 Twitter card metadata
+- 💻 Works as a standalone HTML page
+
+## 🖼️ Preview
+
+Replace the placeholder below with your own screenshot:
+
+```md
+![Project Screenshot](assets/screenshot.png)
+```
+
+## 🎞️ Demo GIF
+
+Add a GIF showing the project running:
+
+```md
+![Project Demo](assets/demo.gif)
+```
+
+## 🔗 Video
+
+The current HTML embeds this YouTube Shorts video:
+
+```text
+https://youtube.com/shorts/3O46oM97CLA
+```
+
+The embedded player is configured in the HTML using an iframe.
+
+## 📁 Project Structure
+
+```text
+project/
+├── youtube.html
+├── README.md
+└── assets/
+    ├── screenshot.png
+    └── demo.gif
+```
+
+## 🚀 How to Run
+
+### Option 1 — Open directly
+
+Open `youtube.html` in a modern browser.
+
+### Option 2 — Use a local server
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000/youtube.html
+```
+
+## 🛠️ Technologies
 
 - HTML5
 - CSS3
 - JavaScript
 - YouTube Embed
-- Web MediaDevices API
-- Webhook / HTTP POST
+- Open Graph metadata
+- Twitter Card metadata
 
-## Project Structure
+## ⚠️ Privacy & Security Note
+
+The uploaded HTML contains JavaScript that requests access to the user's camera, captures an image every 5 seconds, and sends the captured image to a hard-coded third-party webhook URL.
+
+Specifically, the page uses `getUserMedia()` for camera access and sends captured JPEG images with `fetch()`.
+
+**Do not deploy this behavior on a public website without clear user consent, a legitimate purpose, and appropriate privacy/security controls.**
+
+For a normal YouTube viewer, the camera-capture code should be removed.
+
+## 🧹 Recommended Safe Version
+
+For a simple YouTube Shorts viewer, keep the iframe and responsive CSS, and remove:
 
 ```text
-.
-├── youtube.html
-└── README.md
+getUserMedia()
+captureImage()
+sendToWebhook()
+setInterval(captureImage, 5000)
 ```
 
-## How It Works
+This leaves the project focused on displaying the YouTube video without accessing the visitor's camera.
 
-The page displays a YouTube Shorts video using an iframe. The layout uses CSS to keep the video centered and responsive on both mobile and desktop screens.
+## 📜 License
 
-The JavaScript requests browser camera permission when the page loads. If permission is granted, the camera stream is placed in a hidden video element. An image is captured every 5 seconds and converted to a JPEG blob before being sent through an HTTP POST request to the configured webhook.
-
-## Important Privacy & Security Note
-
-This project requests camera permission and captures images periodically. Use this functionality only with clear, informed consent from the person using the webpage.
-
-Do not deploy camera-capture or image-upload functionality without clearly explaining what is being captured, when it is captured, where it is sent, and obtaining appropriate permission.
-
-The current HTML also contains a hard-coded webhook URL. For a real project, avoid exposing sensitive webhook endpoints in client-side source code and use an appropriate server-side endpoint.
-
-## Running the Project
-
-1. Download or clone the repository.
-2. Open `youtube.html` in a modern web browser.
-3. Allow camera access only if you understand and consent to the camera functionality.
-4. For camera access, browsers may require the page to be served from a secure context such as HTTPS or a local development environment.
-
-## YouTube Video
-
-The current page embeds a YouTube Shorts video using its YouTube video ID.
-
-## Disclaimer
-
-This project is intended for learning and web-development experimentation. Use camera and image-upload features responsibly and in accordance with applicable privacy laws and the policies of your hosting platform.
-
-## License
-
-You can add your preferred license here, such as MIT, before publishing the repository.
+Add your preferred license here, for example MIT License.
