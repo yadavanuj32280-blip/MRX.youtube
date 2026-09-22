@@ -1,118 +1,94 @@
-# MRX.youtube
-## 🎬 YouTube Shorts Web Viewer
-
-> A simple responsive HTML page that embeds a YouTube Shorts video in a mobile-style layout.
+# YouTube Shorts Security-Awareness Demo
 
 ```text
-╔══════════════════════════════════════════╗
-║            📺 YOUTUBE SHORTS            ║
-║                                          ║
-║              ┌──────────┐                ║
-║              │   ▶️     │                ║
-║              │  VIDEO   │                ║
-║              │  SHORT   │                ║
-║              └──────────┘                ║
-║                                          ║
-║        Responsive • Simple • HTML        ║
-╚══════════════════════════════════════════╝
+ __   __ _____ _____ ___  _   _ _____ ____  
+ \ \ / /| ____|_   _/ _ \| \ | | ____|  _ \ 
+  \ V / |  _|   | || | | |  \| |  _| | |_) |
+   | |  | |___  | || |_| | |\  | |___|  _ < 
+   |_|  |_____| |_| \___/|_| \_|_____|_| \_\
 ```
 
-## ✨ Features
+## Overview
 
-- 📱 Responsive YouTube Shorts layout
-- ▶️ Embedded YouTube video player
-- 🌑 Black fullscreen-style background
-- 🖼️ Open Graph preview metadata for social sharing
-- 🐦 Twitter card metadata
-- 💻 Works as a standalone HTML page
+This project is a local HTML demonstration styled as a YouTube Shorts page. It is intended for:
 
-## 🖼️ Preview
+- Security-awareness training
+- Demonstrating how social-engineering pages can appear trustworthy
+- Teaching users to inspect permissions, embeds, and external requests
+- Testing defensive browser and content-security controls
 
-Replace the placeholder below with your own screenshot:
+> **Important:** This demo must not be used to impersonate YouTube, deceive users, collect personal information, or access a camera without clear, informed consent.
 
-```md
-![Project Screenshot](assets/screenshot.png)
+## Security Warning
+
+The original version of `youtube.html` contains functionality that:
+
+1. Requests access to the visitor’s camera.
+2. Captures images periodically.
+3. Uploads captured images to an external webhook.
+
+This behavior is invasive and should not be used in a deceptive page or deployed publicly.
+
+For a safe demonstration:
+
+- Remove the camera-access code.
+- Remove hidden `<video>` and `<canvas>` elements.
+- Remove the webhook URL and upload logic.
+- Display a visible training notice instead of collecting data.
+- Ask for explicit consent before testing any browser permission.
+- Use a local mock endpoint if network behavior must be demonstrated.
+- Never store or transmit real images or personal information.
+
+## Recommended Safe Changes
+
+The page should clearly identify itself as a training demo:
+
+```html
+<div class="training-banner" role="note">
+    Security-awareness demo — no camera access or data collection is performed.
+</div>
 ```
 
-## 🎞️ Demo GIF
+Suggested CSS:
 
-Add a GIF showing the project running:
-
-```md
-![Project Demo](assets/demo.gif)
+```css
+.training-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    background: #b00020;
+    font: 600 14px/1.4 system-ui, sans-serif;
+    text-align: center;
+}
 ```
 
-## 🔗 Video
+## Privacy and Consent Requirements
 
-The current HTML embeds this YouTube Shorts video:
+Before conducting any authorized test:
 
-```text
-https://youtube.com/shorts/3O46oM97CLA
-```
+- Obtain written permission from participants.
+- Explain exactly what the page does.
+- Explain which browser permissions are requested.
+- Avoid collecting images, audio, credentials, or identifying information.
+- Provide an obvious way to stop the demonstration.
+- Delete all test data after the exercise.
+- Use a private, access-controlled test environment.
 
-The embedded player is configured in the HTML using an iframe.
+## Responsible Use
 
-## 📁 Project Structure
+This project is suitable for defensive education and authorized testing only. Do not use it to:
 
-```text
-project/
-├── youtube.html
-├── README.md
-└── assets/
-    ├── screenshot.png
-    └── demo.gif
-```
+- Trick people into granting browser permissions
+- Impersonate a real service
+- Harvest credentials or personal data
+- Capture photographs without informed consent
+- Send data to third-party services without authorization
+- Bypass browser security controls
 
-## 🚀 How to Run
+## License
 
-### Option 1 — Open directly
-
-Open `youtube.html` in a modern browser.
-
-### Option 2 — Use a local server
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000/youtube.html
-```
-
-## 🛠️ Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- YouTube Embed
-- Open Graph metadata
-- Twitter Card metadata
-
-## ⚠️ Privacy & Security Note
-
-The uploaded HTML contains JavaScript that requests access to the user's camera, captures an image every 5 seconds, and sends the captured image to a hard-coded third-party webhook URL.
-
-Specifically, the page uses `getUserMedia()` for camera access and sends captured JPEG images with `fetch()`.
-
-**Do not deploy this behavior on a public website without clear user consent, a legitimate purpose, and appropriate privacy/security controls.**
-
-For a normal YouTube viewer, the camera-capture code should be removed.
-
-## 🧹 Recommended Safe Version
-
-For a simple YouTube Shorts viewer, keep the iframe and responsive CSS, and remove:
-
-```text
-getUserMedia()
-captureImage()
-sendToWebhook()
-setInterval(captureImage, 5000)
-```
-
-This leaves the project focused on displaying the YouTube video without accessing the visitor's camera.
-
-## 📜 License
-
-Add your preferred license here, for example MIT License.
+Use, modify, and distribute this training material only in accordance with applicable law, organizational policy, and explicit participant consent.
